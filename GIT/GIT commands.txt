@@ -1,0 +1,83 @@
+'clear' no git bash limpa a tela
+
+'git init' - inicializa o repositório
+	'git config --local user.name "<Seu nome aqui>"' - Adicionar informação de nome para as alterações
+	'git config --local user.email "<seu@email.aqui>"' - Adicionar informação de email para as alterações
+
+'git status' - mostra o estado do repositório
+
+'git add <nome do arquivo>' - adiciona o arquivo para ser commitado
+
+'git rm <nome do arquivo>' - remove o arquivo dos arquivos a serem commitados
+
+'git commit -m "<mensagem>"' - commita, ou envia, as alterações com a mensagem passada entre aspas para o parâmetro -m
+
+'git log' - mostra o histórico de alterações feitas no arquivo
+	'git log --oneline' - mostra o histórico resumido de alterações
+	'git log -p' - mostra o histórico detalhado de alterações
+	'git log --help' - para ver mais parâmetros do comando 'git log'
+	*** https://devhints.io/git-log *** para ver mais parâmetros do comando 'git log'
+
+Arquivo '.gitignore' ignora todos os arquivos descritos dentro dele. Para isso, é necessário incluir esse arquivo em um commit.
+
+'git init --bare' - inicializa um repositório puro, ou seja, que contém apenas as alterações dos arquivos, e não uma cópia física de cada um dos arquivos. Geralmente, esse comando é usado para criar o local que será o servidor do projeto
+
+'git remote' - lista os repositórios remotos que o repositório local conhece
+
+'git remote add <nome do rep. remoto> <caminho do rep. remoto>' - adiciona um repositório remoto para que o repositório local o reconheça. '<nome do rep. remoto>' vai ser reconhecido somente pelo repositório local como o repositório remoto definido
+
+'git remote -v' - faz com que o endereço dos repositórios remotos seja exibido
+
+'git clone /c/Users/ALURA/Documents/git-e-github/servidor <nome local do clone>' - *o endereço é apenas um exemplo de como deve ser listado o endereço nesse comando* clona o repositório do endereço indicado para o repositório local
+
+'git push <nome do rep. local> <nome da branch a ser enviada>' - envia as informações da branch especificada do repositório local para o(s) repositório(s) remotos reconhecidos pelo repositório local
+
+'git remote rename <nome atual> <novo nome>' - altera o nome de um repositório remoto para o repositório local
+
+'git pull <nome do rep. remoto> <nome da branch a ser recebida>' - recebe as informações da branch especificada do repositório remoto para o repositório local
+
+'git branch' - lista o nome dos branches no repositório atual
+
+'git branch <nome do novo branch>' - cria um novo branch no repositório atual
+
+'git checkout <nome do branch>' - passa a trabalhar no branch indicado
+
+'git checkout -b <nome do novo branch>' - cria um novo branch no repositório atual e passa a trabalhar nele
+
+'git merge <nome do branch>' - mescla as alterações do branch atual com a última alteração do branch especificado e cria um único commit de merge
+
+'git rebase <nome do branch>' - copia os commits já existentes no branch especificado para o branch atual e traz o último commit do branch atual para o fim
+
+'git log --graph' - exibe o log com linhas representando os branches
+
+'git checkout -- <nome do arquivo>' - descarta mudanças feitas em um arquivo antes de adicioná-la ao commit (antes de dar o stage na mudança)
+
+'git reset HEAD <nome do arquivo>' - desmarca arquivos que já foram marcados para o commit e mantém alterações
+
+'git revert <código único do hash>' - cria um novo commit desfazendo as alterações do commit que possui o hash especificado
+
+Quando estiver no editor Vim, digitar ':x' para sair e salvar
+
+'git stash' - salva as alterações para que possam ser acessadas depois, mas sem gerar commit. Commits realizados depois do stash não incluirão as alterações feitas antes de o stash ser realizado
+
+'git stash list' - lista os stashes realizados
+
+'git stash apply <número do stash>' - aplica as alterações salvas naquele stash e mantém a stash salva
+
+'git stash drop' - remove o último stash da lista
+
+'git stash pop' - aplica as alterações salvas no último stash da lista e o remove da lista de stashes
+
+'git checkout <7 primeiros dígitos de um hash de commit>' - "viaja no tempo" e traz o código de volta ao estado em que estava no momento em que o commit especificado foi realizado. Nesse momento, você trabalha "solto no espaço", sem estar em nenhum branch específico
+
+Para salvar alterações feitas depois de retornar a algum commit específico, deve ser criado um novo branch. Nesse caso, pode-se usar 'git checkout -b <nome do branch>' e qualquer commit feito depois disso será aplicado ao branch criado. Caso contrário, ao voltar para um branch existente, todas as alterações serão descartadas.
+
+'git diff <primeiro hash>..<segundo hash>' - mostra o que foi alterado no código desde o primeiro commit especificado até o segundo (os dois pontos significam "até")
+
+'git diff <primeiro branch>..<segundo branch>' - faz comparação entre os dois branches especificados
+
+'git diff' - mostra as alterações que foram feitas sem serem adicionadas ao stage
+
+'git log -n <número de commits>' - exibe os n últimos commits realizados
+
+'git tag -a <número/nome da versão> -m "<mensagem da tag>"' - cria uma tag (cria uma versão/checkpoint) com o nome especificado e opcionalmente inclui a mensagem especificada
